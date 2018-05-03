@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //create subView in center of main view
+//create subView in center of main view
     UIView* subView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds) - 100,
                                                               CGRectGetMidY(self.view.bounds) - 100,
                                                               200, 200)];
@@ -33,13 +33,13 @@
     [self.view addSubview:subView];
     self.testSubView = subView;
     
-    //tap
+//tap
     UITapGestureRecognizer* tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleTap:)];
     [self.view addGestureRecognizer:tapGesture];
     
-    //double tap
+//double tap
     UITapGestureRecognizer* doubleTapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleDoubleTap:)];
@@ -49,7 +49,7 @@
     //tapGesture не сработает раньше doubleTapGesture, если будет второе нажатие
     [tapGesture requireGestureRecognizerToFail:doubleTapGesture];
     
-    //double tap with 2 touches
+//double tap with 2 touches
     UITapGestureRecognizer* doubleTapDoubleTouchGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleDoubleTapDoubleTouch:)];
@@ -58,7 +58,7 @@
     
     [self.view addGestureRecognizer:doubleTapDoubleTouchGesture];
     
-    //zoom
+//pinch (zoom)
     UIPinchGestureRecognizer* pinchGesture =
     [[UIPinchGestureRecognizer alloc] initWithTarget:self
                                               action: @selector(handlePinch:)];
@@ -67,7 +67,7 @@
     pinchGesture.delegate = self;
     [self.view addGestureRecognizer:pinchGesture];
     
-    //rotation
+//rotation
     UIRotationGestureRecognizer* rotateGesture =
     [[UIRotationGestureRecognizer alloc] initWithTarget:self
                                                  action:@selector(handleRotation:)];
@@ -76,7 +76,7 @@
     rotateGesture.delegate = self;
     [self.view addGestureRecognizer:rotateGesture];
     
-    //pan
+//pan
     UIPanGestureRecognizer* panGesture =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handlePan:)];
@@ -84,7 +84,7 @@
     [self.view addGestureRecognizer:panGesture];
     
     
-    //swipe
+//swipe
     //vertical
     UISwipeGestureRecognizer* verticalSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self
